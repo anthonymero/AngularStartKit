@@ -1,11 +1,19 @@
 @import '~@angular/material/theming';
-@include mat-core();
+// @include mat-core();
 
 /* ======== Angular material custom themes ======== */
-$my-custom-primary: mat-palette($mat-blue);
-$my-custom-accent: mat-palette($mat-pink, 100, 500, A100);
-$my-custom-warn: mat-palette($mat-lime);
 
-$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+// Light theme
+// Available color palettes: https://material.io/design/color/
+$custom-theme-primary: mat-palette($mat-blue);
+$custom-theme-accent: mat-palette($mat-pink, 100, 500, A100);
 
-@include angular-material-theme($my-custom-theme);
+// Warn palette is optional ( default to red)
+$custom-theme-warn: mat-palette($mat-lime);
+
+// Create theme object (a Sass map containing all of the palettes).
+$custom-theme-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+// $custom-theme-theme: mat-dark-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+
