@@ -1,5 +1,6 @@
 
-<app-sidenav [themeColor]="'primary'">
-  Main Content
+<app-sidenav [themeColor]="themeColor">
+  Main Content <br/>
+  <button mat-raised-button [color]="themeColor" (click)="openDialog()">Open dialog</button>
 </app-sidenav>
 
