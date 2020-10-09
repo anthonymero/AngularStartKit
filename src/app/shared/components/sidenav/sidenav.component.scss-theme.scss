@@ -1,0 +1,32 @@
+// src/app/shared/components/sidenav/sidenav.component.scss-theme.scss
+
+@import '~@angular/material/theming';
+
+@mixin sidenav-component-theme($theme) {
+  // retirieve variable from theme
+  // All possible variables. Use only what you need
+  $primary: map-get($theme, primary);
+  $accent: map-get($map: $theme, $key: accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-sidenav {
+    // let's take mat-toolbar's default theme
+    background-color: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+
+    // mat-toolbar colored theme
+    &[color='primary'] {
+      @include _mat-toolbar-color($primary);
+    }
+
+    &[color='accent'] {
+      @include _mat-toolbar-color($accent);
+    }
+
+    &[color='warn'] {
+      @include _mat-toolbar-color($warn);
+    }
+  }
+}

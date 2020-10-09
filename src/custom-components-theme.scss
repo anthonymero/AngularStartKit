@@ -1,6 +1,9 @@
 // custom-components-theme.scss
 
 // import custom components themes
-
+@import './app/shared/components/sidenav/sidenav.component.scss-theme.scss';
 // you only have to add additional components here (instead of in every theme class)
-@mixin custom-components-theme($theme) {}
+@mixin custom-components-theme($theme) {
+
+  @include sidenav-component-theme($theme);
+}
