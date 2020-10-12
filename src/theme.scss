@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+// @include mat-core();
+
+/* ======== Angular material custom themes ======== */
+
+// Light theme
+// Available color palettes: https://material.io/design/color/
+$custom-theme-primary: mat-palette($mat-blue);
+$custom-theme-accent: mat-palette($mat-pink, 100, 500, A100);
+
+// Warn palette is optional ( default to red)
+$custom-theme-warn: mat-palette($mat-lime);
+
+// Create theme object (a Sass map containing all of the palettes).
+$custom-theme-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+// $custom-theme-theme: mat-dark-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+// Theme for notifications / snackbar
+$notifications-theme: (
+  default: #fff,
+  info: mat-color(mat-palette($mat-blue), 400),
+  success: mat-color(mat-palette($mat-green), 400),
+  warning: mat-color(mat-palette($mat-yellow), 400),
+  error: mat-color(mat-palette($mat-red), 400),
+);
