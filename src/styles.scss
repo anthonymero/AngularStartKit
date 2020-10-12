@@ -12,7 +12,7 @@
 @import './custom-components-theme.scss';
 
 @include angular-material-theme($custom-theme-theme);
-@include custom-components-theme($custom-theme-theme);
+@include custom-components-theme($custom-theme-theme, $notifications-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
