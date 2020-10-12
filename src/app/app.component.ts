@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { NotificationService } from './shared/services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   themeColor = 'primary';
   constructor(
     private readonly dialog: MatDialog,
+    private notificationService: NotificationService,
   ) {}
 
 
@@ -23,6 +25,10 @@ export class AppComponent {
         themeColor: this.themeColor,
       }
     });
+  }
+
+  openNotification(): void {
+    this.notificationService.info('Default Notification');
   }
 
 }
