@@ -1,12 +1,7 @@
+<app-navbar (toggleSidenav)="openSidenav()" [themeColor]="themeColor"></app-navbar>
 
-<app-sidenav [themeColor]="themeColor">
-  Main Content <br/>
-  <button mat-raised-button [color]="themeColor" (click)="openDialog()">Open dialog</button>
-
-  <br/>
-
-  <button mat-raised-button [color]="themeColor" (click)="openNotification()">Open notification</button>
-
+<app-sidenav [themeColor]="themeColor" [(opened)]="isSidenavOpened" >
 
 </app-sidenav>
+
 

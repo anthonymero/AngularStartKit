@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from './shared/components/dialog/dialog.component';
-import { NotificationService } from './shared/services/notification.service';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -9,26 +7,23 @@ import { NotificationService } from './shared/services/notification.service';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
+  @ViewChild(SidenavComponent) child;
+
+  isSidenavOpened = true;
   themeColor = 'primary';
-  constructor(
-    private readonly dialog: MatDialog,
-    private notificationService: NotificationService,
-  ) {}
 
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      panelClass: 'custom-dialog',
-      data: {
-        themeColor: this.themeColor,
-      }
-    });
+  ngAfterViewInit(): void {
+    this.isSidenavOpened = this.child.opened;
+    console.log( this.isSidenavOpened);
   }
 
-  openNotification(): void {
-    this.notificationService.info('Default Notification');
+  openSidenav(): void {
+    this.isSidenavOpened = !this.isSidenavOpened;
   }
+
+
 
 }
