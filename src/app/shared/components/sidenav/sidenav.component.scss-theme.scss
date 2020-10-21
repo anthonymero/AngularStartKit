@@ -6,7 +6,7 @@
   // retirieve variable from theme
   // All possible variables. Use only what you need
   $primary: map-get($theme, primary);
-  $accent: map-get($map: $theme, $key: accent);
+  $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);

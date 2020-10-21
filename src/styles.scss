@@ -11,8 +11,8 @@
 @import './theme.scss';
 @import './custom-components-theme.scss';
 
-@include angular-material-theme($custom-theme-theme);
-@include custom-components-theme($custom-theme-theme, $notifications-theme);
+@include angular-material-theme($light-theme);
+@include custom-components-theme($light-theme, $notifications-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -24,4 +24,12 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  @include angular-material-theme($light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  @include angular-material-theme($dark-theme);
 }
