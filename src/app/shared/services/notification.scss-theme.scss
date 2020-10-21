@@ -34,6 +34,8 @@
 
   .info-notification-overlay {
     border-left-color: $info-color;
+    background: #fff;
+    color: $info-color;
 
     &::before {
       content: "\e88e  ";

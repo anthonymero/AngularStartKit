@@ -21,7 +21,8 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 
 // Theme for notifications / snackbar
-$notifications-theme: (default: #fff,
+$notifications-theme: (
+  default: #fff,
   info: mat-color(mat-palette($mat-blue), 400),
   success: mat-color(mat-palette($mat-green), 400),
   warning: mat-color(mat-palette($mat-yellow), 400),
