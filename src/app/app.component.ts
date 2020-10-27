@@ -1,7 +1,10 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { NotificationService } from './shared/services/notification.service';
 import { ThemingService } from './theming.service';
+import { DialogComponent } from './shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +20,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private readonly themingService: ThemingService,
     private overlayContainer: OverlayContainer,
+    private readonly dialog: MatDialog,
+    private readonly notificationService: NotificationService,
 
   ) { }
 
@@ -34,11 +39,24 @@ export class AppComponent implements OnInit, OnDestroy {
     this.themingSubscription.unsubscribe();
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      panelClass: 'custom-dialog',
+      data: {
+        themeColor: this.themeColor,
+      }
+    });
+  }
 
-// Private method
-/*
-* Apply current theme on components with overlay (e.g. dropdowns, dialogs)
-*/
+  openNotification(): void {
+    this.notificationService.default('Default Notification');
+  }
+
+
+  // Private method
+  /*
+  * Apply current theme on components with overlay (e.g. dropdowns, dialogs)
+  */
   private applyThemeOnOverlays(): void {
     // remove old theme class and add new theme class
     // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern

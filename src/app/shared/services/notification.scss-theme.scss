@@ -13,6 +13,7 @@
   .warning-notification-overlay,
   .error-notification-overlay {
     border-left: 4px solid;
+    color: #000;
 
     &::before {
       font-family: "Material Icons";
@@ -26,6 +27,8 @@
 
   .default-notification-overlay {
     border-left-color: $default-color;
+    background: #fff;
+
 
     &::before {
       color: #fff;
