@@ -1,0 +1,17 @@
+.nav {
+
+  &-header {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &-tool-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+
+  }
+
+}

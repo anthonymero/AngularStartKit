@@ -1,0 +1,19 @@
+<!-- Navbar -->
+<mat-toolbar [color]="themeColor" class="nav-header">
+
+  <div class="nav-tool-items">
+    <button mat-icon-button (click)="onToggleSideMenu()">
+      <mat-icon class="hamburger">menu</mat-icon>
+    </button>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" mdTooltip="Change theme">
+        <mat-icon>format_color_fill</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeTheme('light-theme')">Light</button>
+        <button mat-menu-item (click)="changeTheme('dark-theme')">Dark</button>
+      </mat-menu>
+    </div>
+  </div>
+
+</mat-toolbar>
