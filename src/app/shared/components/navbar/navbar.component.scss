@@ -7,11 +7,10 @@
   }
 
   &-tool-items {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 
-    .mat-icon {
-      cursor: pointer;
-    }
 
   }
 
