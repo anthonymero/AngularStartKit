@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,14 +9,13 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class NavbarComponent {
   @Input() themeColor = '';
 
-  @Output()
-  toggleSidenav: EventEmitter<void> = new EventEmitter<void>();
 
-
-  constructor() { }
+  constructor(
+    private readonly sidenavService: SidenavService,
+  ) { }
 
 
   onToggleSideMenu(): void {
-    this.toggleSidenav.emit();
+    this.sidenavService.toggle();
   }
 }
