@@ -1,0 +1,18 @@
+.nav {
+
+  &-header {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &-tool-items {
+    display: flex;
+
+    .mat-icon {
+      cursor: pointer;
+    }
+
+  }
+
+}

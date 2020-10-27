@@ -5,16 +5,20 @@
 
 // Light theme
 // Available color palettes: https://material.io/design/color/
-$custom-theme-primary: mat-palette($mat-blue);
-$custom-theme-accent: mat-palette($mat-pink, 100, 500, A100);
-
+$light-primary: mat-palette($mat-blue);
+$light-accent: mat-palette($mat-pink, 100, 500, A100);
 // Warn palette is optional ( default to red)
-$custom-theme-warn: mat-palette($mat-lime);
-
+$light-warn: mat-palette($mat-lime);
 // Create theme object (a Sass map containing all of the palettes).
-$custom-theme-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
 
-// $custom-theme-theme: mat-dark-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+// Dark Theme
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
 
 // Theme for notifications / snackbar
 $notifications-theme: (
